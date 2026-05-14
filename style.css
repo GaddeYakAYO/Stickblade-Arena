@@ -1,0 +1,141 @@
+@keyframes snapOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    95% {
+        opacity: 0.8;
+        transform: translateY(70px) scale(0.95);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes snapIn {
+    0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.95);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-15px) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+body{
+    font-family: 'Press Start 2P', monospace;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;      
+    height: 100%;
+    user-select: none;      /* prevents text selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    outline: none;          /* removes focus outline on click */
+}
+
+button {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.5rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    transition: all 0.5s ease;  
+    transform: scale(1.25);
+}
+
+.title-screen_buttons {
+    opacity: 1;
+    padding: 20px 40px;
+    border-radius: 30px;
+}
+
+.snap-out {
+    animation: snapOut 0.5s forwards;
+}
+
+.snap-in {
+    animation: snapIn 0.35s ease-out forwards;
+}
+
+#title-screen {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    background-image: url('images/titlescreen_background.png');
+    width: 100vw;      
+    height: 100vh;  
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box; 
+}
+
+#title-screen_buttons_wrapper {
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
+    height: 37vh;          
+    gap: 160px;
+}
+
+#start-button {
+    font-size: 3rem;
+    padding: 20px 40px;
+    background-color: #f3cf00;
+}
+
+#options-button {
+    font-size: 2.4rem;
+    padding: 16px 32px;
+    background-color: #00d169;
+}
+
+
+#credits-button {
+    font-size: 2.4rem;
+    padding: 16px 32px;
+    background-color: #bb00bb;
+}
+
+#title-screen_title_wrapper {
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
+    height: 18vh;          
+}
+
+#title-screen_title {
+    display: block;
+    text-align: center;      
+    font-size: 5rem;
+    background-color: white;
+    opacity: 0.75;
+    padding: 28.6px 71.4px;
+    border-radius: 30px;
+}
+
+#credits-screen {
+    background-color: #00e7d4;
+    width: 100vw;      
+    height: 100vh;  
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box; 
+    display: none;           
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    gap: 40px;
+}
